@@ -1,0 +1,13 @@
+.card {
+   margin: 1rem 0;
+  background: #C3423F;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card:hover {
+  filter: drop-shadow(0 0 0.5em #C3423F);
+}
