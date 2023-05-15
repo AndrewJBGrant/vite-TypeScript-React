@@ -1,11 +1,14 @@
 .card {
-   margin: 1rem 0;
-  background: #C3423F;
+  margin: 1rem 0;
+  background-color: #C3423F;
+  border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   color: white;
   padding: 1rem 2rem;
   cursor: pointer;
   text-align: center;
+
+  /* border-left: solid 3px #C3423F; */
 }
 
 .card:hover {
