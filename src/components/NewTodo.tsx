@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
-const NewTodo = () => {
+
+const NewTodo: React.FC<{onAddTodo: (text: string) => void } > = (props) => {
   // useRef<HTMLInputElement> we need to tell typeScript exactly which element the ref will connect
   // We need a starting value to show where the ref is linked (null)
   const todoTextInputRef = useRef<HTMLInputElement>(null);
@@ -14,13 +15,15 @@ const NewTodo = () => {
     // console.log(enteredText)
 
     if (enteredText?.trim().length === 0) {
-      // Throe an error
+      // Throw an error
       return;
     }
     // Calling a function that is stored in App.tsx
     // Pass pointers at functions as props to other components
-  };
-// console.log(todoTextInputRef.current?.value);
+
+    props.onAddTodo(enteredText);
+};
+
 
 
 
