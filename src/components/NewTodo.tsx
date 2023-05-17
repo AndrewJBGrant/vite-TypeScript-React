@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { TodosContext } from "../store/todos-context";
 
 
 
@@ -6,7 +7,11 @@ import { useRef } from "react";
 // Custom props using generic nature <{}>, we are establishing that onAddTodo is a function
 // Assign a 'function type' we want a type of string and because we dont need a return value we call void
 // {onAddTodo: (parameters required this function needs) => return type of function }
-const NewTodo: React.FC<{onAddTodo: (text: string) => void } > = (props) => {
+// const NewTodo: React.FC<{onAddTodo: (text: string) => void } > = () => {
+
+  const NewTodo: React.FC = () => {
+
+  const todoCtx = useContext(TodosContext);
   // useRef<HTMLInputElement> we need to tell typeScript exactly which element the ref will connect
   // We need a starting value to show where the ref is linked (null)
   const todoTextInputRef = useRef<HTMLInputElement>(null);
@@ -29,7 +34,9 @@ const NewTodo: React.FC<{onAddTodo: (text: string) => void } > = (props) => {
     // Calling a function that is stored in App.tsx
     // Pass pointers at functions as props to other components
     // adding a new ToDo
-    props.onAddTodo(enteredText);
+    // props.onAddTodo(enteredText);
+
+    todoCtx.addTodo(enteredText);
 };
 
 

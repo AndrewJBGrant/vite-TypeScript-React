@@ -3,10 +3,19 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
   }
 
 .text-card {
-background: white;
-padding: 2rem;
+background: #C34C25;
+padding: 1rem;
+font-size: 0.9rem;
+border-radius: 6px;
+border: solid 1px red;
 }
- 
+
+header {
+  text-align: left;
+  font-size: 2rem;
+  padding: 2rem;
+}

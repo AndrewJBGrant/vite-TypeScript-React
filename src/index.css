@@ -10,8 +10,8 @@ font-family: 'Pathway Extreme', sans-serif; */
   font-weight: 100;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,8 +25,8 @@ font-family: 'Pathway Extreme', sans-serif; */
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #D1C9B3;
+    background-color: #C34C25;
   }
   /* a:hover {
     color: #747bff;

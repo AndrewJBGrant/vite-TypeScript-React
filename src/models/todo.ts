@@ -9,6 +9,7 @@ text: string;
 constructor(todoText: string) {
 this.text = todoText;
 this.id = Math.floor(Math.random() * Date.now()).toString(16);
+// this.id = new Date().toISOString();
 }
 
 }
