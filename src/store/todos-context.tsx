@@ -11,16 +11,20 @@ type TodosContextObj = {
   removeTodo: (id: string) => void;
 };
 
+type ContainerProps = {
+  children?: React.ReactNode; //👈 children prop type
+};
+
 // createContext() wants a default value, one arguments
 // Here the argument is an object to describe the shape
 export const TodosContext = React.createContext<TodosContextObj>({
   items: [],
   // Concrete function definition
   addTodo: () => {},
-  removeTodo: (id: string) => {},
+  removeTodo: (_id: string) => {},
 });
 
-const TodosContextProvider: React.FC = (props) => {
+const TodosContextProvider: React.FC = (props: ContainerProps) => {
   // useState<Todo[]>([])  Make it clear the data managed by this state (todos) is an array called Todo[]
   const [todos, setTodos] = useState<Todo[]>([]);
 

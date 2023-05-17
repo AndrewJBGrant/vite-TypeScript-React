@@ -2,6 +2,11 @@ import Todos from "./components/Todos";
 import "./App.css";
 import NewTodo from "./components/NewTodo";
 import TodosContextProvider from "./store/todos-context";
+import SetPomodoro from "./components/SetPomodoro";
+import CountdownAnimation from "./components/CountdownAnimation";
+import { useContext } from "react";
+import { SettingContext } from "./store/Settings-context";
+
 
 function App() {
   //   const todos = [
@@ -9,10 +14,12 @@ function App() {
   // new Todo('Build Pomodoro App'),
   //   ];
 
+  const {pomodoro} = useContext(SettingContext)
+
   return (
     <>
       <TodosContextProvider>
-        <header>Pomodoro Timer</header>
+                <header>Pomodoro Timer</header>
         <section className="text-card">
           The Pomodoro Technique is a time management method based on 25-minute
           stretches of focused work broken by five-minute breaks. Longer breaks,
@@ -20,6 +27,24 @@ function App() {
           intervals. Each work interval is called a pomodoro, the Italian word
           for tomato (plural: pomodori).
         </section>
+
+        {pomodoro !== 0 ?
+        <SetPomodoro /> :
+        <>
+        {/* <h2>Testing if set is zero</h2> */}
+<ul>
+<li><button onClick={}>Work</button></li>
+<li><button>Short</button></li>
+<li><button>Long</button></li>
+
+
+
+</ul>
+
+
+        </>
+        }
+        <CountdownAnimation children={undefined} />
         <NewTodo />
         <Todos />
       </TodosContextProvider>
