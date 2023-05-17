@@ -4,8 +4,9 @@
 import './TodoItem.css'
 
 
-const TodoItem: React.FC<{text: string}> = (props) => {
-return <ol className='card'>{props.text}</ol>
+const TodoItem: React.FC<{text: string; onRemoveTodo: () => void }> = (props) => {
+return <ol className='card'>{props.text}
+<button onClick={props.onRemoveTodo}>Delete</button></ol>
 };
 
 
