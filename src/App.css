@@ -19,3 +19,20 @@ header {
   font-size: 2rem;
   padding: 2rem;
 }
+
+.button-group {
+  cursor: pointer;
+  /* opacity: 0.6; */
+
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid transparent;
+  transition: ease border-bottom 250ms;
+  /* ${({ active }) =>
+    active &&
+    `
+    border-bottom: 2px solid black;
+    opacity: 1;
+  `} */
+
+}

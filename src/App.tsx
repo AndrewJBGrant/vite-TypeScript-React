@@ -1,54 +1,41 @@
-import Todos from "./components/Todos";
-import "./App.css";
-import NewTodo from "./components/NewTodo";
-import TodosContextProvider from "./store/todos-context";
-import SetPomodoro from "./components/SetPomodoro";
-import CountdownAnimation from "./components/CountdownAnimation";
-import { useContext } from "react";
-import { SettingContext } from "./store/Settings-context";
+import './App.css';
+import {useState} from "react";
+import Timer from "./components/Timer";
+// import Settings from "./Settings";
+import SettingsContext from "./store/settings-context";
+import NewTodo from './components/NewTodo';
+
 
 
 function App() {
-  //   const todos = [
-  // new Todo('Learn TypeScript'),
-  // new Todo('Build Pomodoro App'),
-  //   ];
 
-  const {pomodoro} = useContext(SettingContext)
+  const [showSettings, setShowSettings] = useState(false);
+  const [workMinutes, setWorkMinutes] = useState(2);
+  const [breakMinutes, setBreakMinutes] = useState(5);
 
   return (
-    <>
-      <TodosContextProvider>
-                <header>Pomodoro Timer</header>
-        <section className="text-card">
+    <main>
+      <header>Pomodoro Timer</header>
+       <section className="text-card">
           The Pomodoro Technique is a time management method based on 25-minute
           stretches of focused work broken by five-minute breaks. Longer breaks,
           typically 15 to 30 minutes, are taken after four consecutive work
           intervals. Each work interval is called a pomodoro, the Italian word
           for tomato (plural: pomodori).
         </section>
-
-        {pomodoro !== 0 ?
-        <SetPomodoro /> :
-        <>
-        {/* <h2>Testing if set is zero</h2> */}
-<ul>
-<li><button onClick={}>Work</button></li>
-<li><button>Short</button></li>
-<li><button>Long</button></li>
-
-
-
-</ul>
-
-
-        </>
-        }
-        <CountdownAnimation children={undefined} />
         <NewTodo />
-        <Todos />
-      </TodosContextProvider>
-    </>
+      <SettingsContext.Provider value={{
+        showSettings,
+        setShowSettings,
+        workMinutes,
+        breakMinutes,
+        setWorkMinutes,
+        setBreakMinutes,
+      }}>
+        <Timer />
+      </SettingsContext.Provider>
+
+    </main>
   );
 }
 
