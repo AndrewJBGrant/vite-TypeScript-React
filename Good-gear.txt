@@ -112,3 +112,20 @@ declare module 'react-tooltip-lite' {
     children: ReactNode;
   }
 }
+
+
+{/* <CircularProgressbar
+        value={percentage}
+        styles={buildStyles({
+        textColor:'#fff',
+        pathColor:mode === 'work' ? red : green,
+
+      })} /> */}
+
+      {/* {isPaused
+          ? <PlayButton onClick={() => { setIsPaused(false); isPausedRef.current = false; }} />
+          : <PauseButton onClick={() => { setIsPaused(true); isPausedRef.current = true; }} />} */}
+
+          {/* <div style={{marginTop:'20px'}}>
+        <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
+      </div> */}

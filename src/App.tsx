@@ -4,6 +4,7 @@ import Timer from "./components/Timer";
 // import Settings from "./Settings";
 import SettingsContext from "./store/settings-context";
 import NewTodo from './components/NewTodo';
+import TodoItem from './components/TodoItem';
 
 
 
@@ -23,7 +24,6 @@ function App() {
           intervals. Each work interval is called a pomodoro, the Italian word
           for tomato (plural: pomodori).
         </section>
-        <NewTodo />
       <SettingsContext.Provider value={{
         showSettings,
         setShowSettings,
@@ -33,6 +33,8 @@ function App() {
         setBreakMinutes,
       }}>
         <Timer />
+        <NewTodo />
+        <TodoItem />
       </SettingsContext.Provider>
 
     </main>
